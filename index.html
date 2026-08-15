@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Recognition — CNN + TensorFlow.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Handwritten Digit Recognition</h1>
+        <p class="subtitle">A Convolutional Neural Network trained on MNIST, running live in your browser via TensorFlow.js</p>
+        <div class="badge-row">
+            <span class="badge">CNN &middot; Keras</span>
+            <span class="badge">TensorFlow.js (client-side inference)</span>
+            <span class="badge">~98–99% test accuracy</span>
+        </div>
+        <p class="developer-credit">Developed by Shabab Ahmad</p>
+    </header>
+
+    <main>
+        <section class="panel draw-panel">
+            <h2>Draw a digit</h2>
+            <canvas id="main-canvas" width="300" height="300"></canvas>
+            <canvas id="small-canvas" width="28" height="28"></canvas>
+            <div class="draw-actions">
+                <button id="erase">Clear</button>
+            </div>
+            <p id="model-status" class="model-status">Loading model...</p>
+        </section>
+
+        <section class="panel result-panel">
+            <h2>Prediction</h2>
+            <div id="prediction">&mdash;</div>
+            <div id="confidence">Draw a digit to see a prediction</div>
+
+            <h3 class="dist-title">Probability distribution</h3>
+            <div id="distribution" class="distribution"></div>
+        </section>
+
+        <section class="panel history-panel">
+            <h2>Prediction history</h2>
+            <div id="history" class="history-list">
+                <p class="empty-hint">Your last few predictions will appear here.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Model: 2 convolution + max-pooling blocks &rarr; dense(128) &rarr; dense(10, softmax). Trained on the MNIST dataset (60,000 training images / 10,000 test images).</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
