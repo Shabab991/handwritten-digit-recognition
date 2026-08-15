@@ -12,6 +12,12 @@ Draw a digit from **0–9** and get an instant prediction with the model's **con
 
 ---
 
+## 🖥️ Application Preview
+
+<img width="1864" height="882" alt="Handwritten Digit Recognition Dashboard" src="https://github.com/user-attachments/assets/cb3c4677-ae4f-4545-afdf-15979305d4b3" />
+
+---
+
 ## ✨ Features
 
 * 🧠 **CNN-based handwritten digit classification**
@@ -92,7 +98,24 @@ Digit 8 → 0.1%
 Digit 9 → 0.1%
 ```
 
-This makes the application more informative than a basic "digit recognizer" because it exposes how confident the classifier is across **all possible classes**.
+This makes the application more informative than a basic digit recognizer because it exposes how confident the classifier is across **all possible classes**.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology         | Purpose                       |
+| ------------------ | ----------------------------- |
+| Python             | Model training                |
+| TensorFlow / Keras | CNN development               |
+| MNIST              | Training dataset              |
+| TensorFlow.js      | Browser-based model inference |
+| JavaScript         | Application logic             |
+| HTML5 Canvas       | Digit drawing                 |
+| HTML5              | Web application structure     |
+| CSS3               | Responsive UI                 |
+| Git & GitHub       | Version control               |
+| GitHub Pages       | Deployment                    |
 
 ---
 
@@ -135,23 +158,6 @@ The output layer contains **10 classes**, representing digits **0 through 9**.
 
 ---
 
-## 🛠️ Tech Stack
-
-| Technology         | Purpose                       |
-| ------------------ | ----------------------------- |
-| Python             | Model training                |
-| TensorFlow / Keras | CNN development               |
-| MNIST              | Training dataset              |
-| TensorFlow.js      | Browser-based model inference |
-| JavaScript         | Application logic             |
-| HTML5 Canvas       | Digit drawing                 |
-| HTML5              | Web application structure     |
-| CSS3               | Responsive UI                 |
-| Git & GitHub       | Version control               |
-| GitHub Pages       | Deployment                    |
-
----
-
 ## 📁 Project Structure
 
 ```text
@@ -174,7 +180,7 @@ handwritten-digit-recognition/
 
 ### 📱 1. Mobile Touch Input
 
-The original implementation registered the wrong touch event names:
+The original implementation registered the wrong touch event name:
 
 ```javascript
 "ontouchstart"
@@ -190,7 +196,7 @@ This was corrected to:
 "touchend"
 ```
 
-As a result, digit drawing now works with touch-enabled devices.
+This enables drawing on touch-enabled devices.
 
 ---
 
